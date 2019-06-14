@@ -7,7 +7,7 @@ module.exports = {
       post.likes += 1;
       await post.save();
 
-      req.io.emit('like', post); //Socket.io
+      req.io.emit('like', post); // Socket.io
 
       return res.json(post);
     } catch (error) {

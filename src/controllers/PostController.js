@@ -1,7 +1,7 @@
-const Post = require('./../models/Post');
 const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');
+const Post = require('./../models/Post');
 
 module.exports = {
   async index(req, res) {
@@ -23,11 +23,11 @@ module.exports = {
         .jpeg({ quality: 70 })
         .toFile(path.resolve(req.file.destination, 'resized', filename));
 
-      fs.unlinkSync(req.file.path); //Delete the image from the uploads file
+      fs.unlinkSync(req.file.path); // Delete the image from the uploads file
 
       const post = await Post.create({ ...req.body, image: filename });
 
-      req.io.emit('post', post); //Socket.io
+      req.io.emit('post', post); // Socket.io
 
       return res.json(post);
     } catch (error) {
