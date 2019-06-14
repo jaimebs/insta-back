@@ -1,8 +1,15 @@
 const express = require('express');
-const route = express.Router();
+const routes = express.Router();
+const multer = require('multer');
+const uploadConfig = require('./config/upload');
 
-const FeedController = require('./controllers/Feed');
+const PostController = require('./controllers/PostController');
+const LikeController = require('./controllers/LikeController');
 
-route.get('/', FeedController.store);
+const upload = multer(uploadConfig);
 
-module.exports = route;
+routes.get('/', PostController.index);
+routes.post('/posts', upload.single('image'), PostController.store);
+routes.post('/posts/:id/likes', LikeController.store);
+
+module.exports = routes;
