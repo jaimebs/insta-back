@@ -41,3 +41,7 @@ Enables real-time bidirectional event-based communication.
 > nodemon
 
 Tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+## Usability
+
+**app.use('/files', express.static(path.resolve(dirname, '..', 'uploads', 'resized')))**, allow create a route to access files in the project folder. Ex: _localhost:3333/files/filename.jpg_
