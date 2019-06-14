@@ -45,3 +45,21 @@ Tool that helps develop node.js based applications by automatically restarting t
 ## Usability
 
 **app.use('/files', express.static(path.resolve(dirname, '..', 'uploads', 'resized')))**, allow create a route to access files in the project folder. Ex: _localhost:3333/files/filename.jpg_
+
+## Good habits
+
+> Semantic Commit Messages
+
+- feat: (new feature for the user, not a new feature for build script) :sparkles:
+
+- fix: (bug fix for the user, not a fix to a build script) :bug:
+
+- docs: (changes to the documentation) :pencil:
+
+- style: (formatting, missing semi colons, etc; no production code change) :lipstick:
+
+- refactor: (refactoring production code, eg. renaming a variable) :recycle:
+
+- test: (adding missing tests, refactoring tests; no production code change) :white_check_mark:
+
+- chore: (updating grunt tasks etc; no production code change) :wrench:
