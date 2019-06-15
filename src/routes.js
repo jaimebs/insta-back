@@ -9,7 +9,7 @@ const LikeController = require('./controllers/LikeController');
 
 const upload = multer(uploadConfig);
 
-routes.get('/', PostController.index);
+routes.get('/posts', PostController.index);
 routes.post('/posts', upload.single('image'), PostController.store);
 routes.post('/posts/:id/likes', LikeController.store);
 
