@@ -6,7 +6,7 @@ const Post = require('./../models/Post');
 module.exports = {
   async index(req, res) {
     try {
-      const posts = await Post.find();
+      const posts = await Post.find().sort('-createdAt');
       return res.json(posts);
     } catch (error) {
       return res.status(400).json({ message: error });
